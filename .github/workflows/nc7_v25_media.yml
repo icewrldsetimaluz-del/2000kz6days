@@ -18,6 +18,8 @@ jobs:
           python-version: '3.11'
       - name: Install renderer
         run: python -m pip install pillow
+      - name: Install video renderer
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Produce campaign media
         run: python automation/nc7_v25_media.py
       - name: Publish original media to repository
